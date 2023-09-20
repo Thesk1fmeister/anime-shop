@@ -1,0 +1,17 @@
+.loader {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 8px;
+  width: 100%;
+  height: 100vh;
+  background-color: #ccccccd1;
+}
+
+.circle {
+  svg {
+    width: 64px;
+    height: 64px;
+  }
+}

@@ -1,0 +1,15 @@
+.container {
+  display: flex;
+  gap: 48px;
+  flex-direction: column;
+  max-width: 1440px;
+  width: 100%;
+  padding: 0 40px;
+  margin: 0 auto;
+}
+
+.list_container {
+  display: flex;
+  gap: 32px;
+  flex-wrap: wrap;
+}
