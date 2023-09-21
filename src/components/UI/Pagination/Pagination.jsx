@@ -1,6 +1,8 @@
 import { getList } from '@/redux/animeSlice'
 import React, { useState, useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
+import s from './Pagination.module.scss'
+import SvgSelector from '../SvgSelector'
 
 const Pagination = () => {
   const dispatch = useDispatch()
@@ -17,29 +19,17 @@ const Pagination = () => {
     dispatch(getList(newPage))
   }
 
-//   const renderPaginationButtons = () => {
-//     const buttons = []
-//     for (let i = 1; i <= totalPages; i++) {
-//       buttons.push(
-//         <button key={i} onClick={() => handlePageChange(i)} className={i === page ? 'active' : ''}>
-//           {i}
-//         </button>
-//       )
-//     }
-//     return buttons
-//   }
-
   return (
-    <div className='pagination'>
-      <button onClick={() => handlePageChange(page - 1)} disabled={page === 1}>
-        Попередня
-      </button>
-      <span className='current-page'>
-        Сторінка {page} з {totalPages}
+    <div className={s.pagination}>
+      <div onClick={() => handlePageChange(page - 1)} disabled={page === 1}>
+        <SvgSelector id='arrow' />
+      </div>
+      <span className={s.current_page}>
+        Page {page} of {totalPages}
       </span>
-      <button onClick={() => handlePageChange(page + 1)} disabled={page === totalPages}>
-        Наступна
-      </button>
+      <div className={s.right_arrow} onClick={() => handlePageChange(page + 1)} disabled={page === totalPages}>
+        <SvgSelector id='arrow' />
+      </div>
     </div>
   )
 }

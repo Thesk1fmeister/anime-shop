@@ -1,0 +1,33 @@
+.card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: transparent;
+  padding: 8px;
+  border: 1px solid #aaa;
+  border-radius: 12px;
+  gap: 6px;
+
+  .image_container {
+    flex-shrink: 0;
+    width: 64px;
+    height: 64px;
+    position: relative;
+    img {
+      width: 48px;
+      height: 48px;
+      object-fit: cover;
+    }
+  }
+  .title_container {
+    background: transparent;
+  }
+}
+
+.delete_btn {
+  background-color: transparent !important;
+  cursor: pointer;
+  svg {
+    background: transparent;
+  }
+}

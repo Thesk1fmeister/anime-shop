@@ -13,7 +13,7 @@ export const mainApi = {
   searchItem(title) {
     return instance.get(`v4/anime?q=title=${title}`)
   },
-  getSelectedItm(id) {
+  getSelectedItem(id) {
     return instance.get(`v4/anime/${id}/full`)
   },
 }

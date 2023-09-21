@@ -3,6 +3,7 @@ import { getList, searchItem } from '@/redux/animeSlice'
 import Head from 'next/head'
 import { useEffect } from 'react'
 import { useDispatch } from 'react-redux'
+import s from '../styles/Home.module.css'
 
 export default function Home() {
   const dispatch = useDispatch()
@@ -19,10 +20,11 @@ export default function Home() {
         <link rel='icon' href='/favicon.ico' />
       </Head>
       <main>
-        <header>
-          <ShoppingCart />
+        <div className={s.header}>
           <SearchField />
-        </header>
+          <ShoppingCart />
+        </div>
+
         <AnimeList />
       </main>
     </>

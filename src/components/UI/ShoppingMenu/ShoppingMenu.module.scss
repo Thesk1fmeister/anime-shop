@@ -1,0 +1,24 @@
+.container {
+  position: absolute;
+  z-index: 3;
+  top: 50px;
+  width: 350px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  height: auto;
+  padding: 12px;
+  background-color: #aaaaaaf2;
+  border-radius: 8px;
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-width: 10px;
+    border-style: solid;
+    border-color: transparent transparent #aaaaaaf2 transparent;
+  }
+}

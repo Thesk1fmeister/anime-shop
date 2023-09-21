@@ -1,0 +1,22 @@
+.shopping_container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .icon {
+    width: 34px;
+    height: 34px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    padding: 4px;
+    border-radius: 12px;
+    border: 1px solid #aaa;
+
+    svg {
+      height: 18px;
+      width: 18px;
+    }
+  }
+}

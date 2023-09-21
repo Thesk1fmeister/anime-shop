@@ -6,7 +6,7 @@ const initialState = {
   list: [],
   pagination: null,
   selectedItem: null,
-  shopCard: [],
+  shoppingCart: [],
 }
 
 export const getList = createAsyncThunk('anime/list', async (page, { rejectWithValue }) => {
@@ -40,10 +40,15 @@ const animeSlice = createSlice({
   initialState,
   reducers: {
     addToCart: (state, action) => {
-      state.shopCard.push(action.payload)
+      const newItem = action.payload
+      const itemAlreadyExists = state.shoppingCart.some(item => item.mal_id === newItem.mal_id)
+
+      if (!itemAlreadyExists) {
+        state.shoppingCart.push(newItem)
+      }
     },
     deleteFromCart: (state, action) => {
-      state.shopCard = state.shopCard.filter(el => el.id !== action.payload)
+      state.shoppingCart = state.shoppingCart.filter(el => el.mal_id !== action.payload)
     },
   },
   extraReducers(builder) {
@@ -59,8 +64,7 @@ const animeSlice = createSlice({
         state.pagination = pagination
       })
       .addCase(getSelectedItem.fulfilled, (state, action) => {
-        console.log(action.payload)
-        state.selectedItem = action.payload
+        state.selectedItem = action.payload.data
       })
   },
 })
