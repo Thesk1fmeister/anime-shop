@@ -13,7 +13,7 @@ const ShoppingCartItem = ({ item }) => {
   return (
     <div className={s.card} key={item.mal_id}>
       <div className={s.image_container}>
-        <Image fill src={item.images.jpg.image_url} />
+        <Image fill src={item.images.jpg.image_url} alt='image' />
       </div>
       <div className={s.title_container}>{item.title}</div>
       <div className={s.delete_btn} onClick={() => handleDelete(item.mal_id)}>

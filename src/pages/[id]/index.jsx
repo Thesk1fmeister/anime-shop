@@ -29,7 +29,7 @@ const SelectedAnimePage = () => {
           </div>
           <div className={s.content_container}>
             <div className={s.image_container}>
-              <Image fill src={selectedItem.images?.jpg.large_image_url} />
+              <Image fill src={selectedItem.images?.jpg.large_image_url} alt='image' />
             </div>
             <div className={s.description_container}>
               <div className={s.text}>Type: {selectedItem.type}</div>

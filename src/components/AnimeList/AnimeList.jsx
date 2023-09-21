@@ -13,7 +13,7 @@ const AnimeList = () => {
           <div className={s.container}>
             <div className={s.list_container}>
               {list.map(item => (
-                <AnimeCard item={item} />
+                <AnimeCard item={item} key={item.mal_id} />
               ))}
             </div>
             <div className={s.pagination}>
